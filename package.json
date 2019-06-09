@@ -15,6 +15,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "startdb": "json-server src/mock/movies.js --port 3200",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

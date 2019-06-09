@@ -3,7 +3,7 @@ import React from "react";
 const Filters = () => {
   return (
     <div className="row mb-4">
-      <div className="col-md-3">
+      <div className="col-md-3 d-flex align-items-end">
         <span className="font-weight-bold">All films</span>
       </div>
       <div className="col">

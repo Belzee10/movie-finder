@@ -23,7 +23,11 @@ class App extends Component {
           </div>
           <div className="row">
             <div className="col">
-              {movies.length && <List movies={movies} />}
+              {movies.length ? (
+                <List movies={movies} />
+              ) : (
+                <span>loading...</span>
+              )}
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
-const getMovies = () => {
-  const movies = [];
+module.exports = () => {
+  const data = { movies: [] };
   for (let i = 0; i < 8; i++) {
-    movies.push({
+    data.movies.push({
       id: i + 1,
       image: "",
       title: `Awesome film #${i + 1}`,
@@ -9,7 +9,5 @@ const getMovies = () => {
       rating: 4.5
     });
   }
-  return movies;
+  return data;
 };
-
-export default getMovies;

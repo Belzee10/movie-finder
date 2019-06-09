@@ -1,11 +1,13 @@
 import { FETCH_MOVIES } from "./types";
 
-import getMovies from "../mock/movies";
-
 export const fetchMovies = () => dispatch => {
-  const movies = getMovies();
-  dispatch({
-    type: FETCH_MOVIES,
-    payload: movies
-  });
+  fetch("http://localhost:3200/movies")
+    .then(resp => resp.json())
+    .then(res => {
+      dispatch({
+        type: FETCH_MOVIES,
+        payload: res
+      });
+    })
+    .catch(err => console.log(err));
 };
