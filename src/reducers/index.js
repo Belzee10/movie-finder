@@ -1,9 +1,7 @@
 import { combineReducers } from "redux";
 
-const reducer = (state, action) => {
-  return null;
-};
+import moviesReducer from "./moviesReducer";
 
 export default combineReducers({
-  reducer: reducer
+  movies: moviesReducer
 });

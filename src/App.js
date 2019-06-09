@@ -1,9 +1,16 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+
+import { fetchMovies } from "./actions/movieActions";
 
 import Filters from "./Filters";
 import List from "./List";
 
 class App extends Component {
+  componentDidMount() {
+    this.props.fetchMovies();
+  }
+
   render() {
     return (
       <div className="main">
@@ -24,4 +31,15 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  movies: state.movies
+});
+
+const actionCreators = {
+  fetchMovies
+};
+
+export default connect(
+  mapStateToProps,
+  actionCreators
+)(App);

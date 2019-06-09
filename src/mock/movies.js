@@ -1,4 +1,4 @@
-const movies = () => {
+const getMovies = () => {
   const movies = [];
   for (let i = 0; i < 8; i++) {
     movies.push({
@@ -11,4 +11,4 @@ const movies = () => {
   return movies;
 };
 
-export default movies;
+export default getMovies;
