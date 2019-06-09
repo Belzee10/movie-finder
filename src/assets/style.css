@@ -6,3 +6,29 @@
   border: 2px solid #e1e5ea;
   font-size: 15px;
 }
+.card {
+  border: none;
+}
+.card-img-top,
+.no-image {
+  height: 250px;
+  border-radius: 8px;
+  border: none;
+}
+.no-image {
+  background-color: rgb(224, 223, 223);
+}
+.card-body {
+  padding: 0;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.card-body h5 {
+  font-size: 16px;
+  font-weight: bold;
+  display: inline;
+  margin: 0;
+}
+.gender {
+  font-size: 14px;
+}
