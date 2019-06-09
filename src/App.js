@@ -12,6 +12,7 @@ class App extends Component {
   }
 
   render() {
+    const { movies } = this.props;
     return (
       <div className="main">
         <div className="container">
@@ -22,7 +23,7 @@ class App extends Component {
           </div>
           <div className="row">
             <div className="col">
-              <List />
+              <List movies={movies} />
             </div>
           </div>
         </div>
