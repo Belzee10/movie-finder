@@ -17,7 +17,7 @@ const Filters = () => {
           </div>
           <div className="col-md-4">
             <select className="form-control">
-              <option selected>All genders</option>
+              <option value="all">All genders</option>
               <option value="1">One</option>
               <option value="2">Two</option>
               <option value="3">Three</option>
