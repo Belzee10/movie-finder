@@ -1,7 +1,8 @@
 import { FETCH_MOVIES } from "./types";
 
-export const fetchMovies = () => dispatch => {
-  fetch("http://localhost:3200/movies")
+export const fetchMovies = filter => dispatch => {
+  const query = filter ? `?gender=${filter}` : "";
+  fetch(`http://localhost:3200/movies${query}`)
     .then(resp => resp.json())
     .then(res => {
       dispatch({

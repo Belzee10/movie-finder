@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import { fetchMovies } from "./actions/movieActions";
+import { doFilter } from "./actions/filterActions";
 
 import Filters from "./Filters";
 import List from "./List";
@@ -11,14 +12,23 @@ class App extends Component {
     this.props.fetchMovies();
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.filter !== this.props.filter)
+      this.props.fetchMovies(this.props.filter);
+  }
+
+  handleOnChange = e => {
+    this.props.doFilter(e.target.value);
+  };
+
   render() {
-    const { movies } = this.props;
+    const { movies, filter } = this.props;
     return (
       <div className="main">
         <div className="container">
           <div className="row">
             <div className="col">
-              <Filters />
+              <Filters filterSelected={filter} onChange={this.handleOnChange} />
             </div>
           </div>
           <div className="row">
@@ -37,11 +47,13 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-  movies: state.movies
+  movies: state.movies,
+  filter: state.filter
 });
 
 const actionCreators = {
-  fetchMovies
+  fetchMovies,
+  doFilter
 };
 
 export default connect(

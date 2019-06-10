@@ -1,10 +1,13 @@
 import React from "react";
 
-const Filters = () => {
+const Filters = props => {
+  const { filterSelected, onChange } = props;
   return (
     <div className="row mb-4">
       <div className="col-md-3 d-flex align-items-end">
-        <span className="font-weight-bold">All films</span>
+        <span className="badge badge-dark text-capitalize font-weight-bold">
+          {filterSelected ? filterSelected : `All movies`}
+        </span>
       </div>
       <div className="col">
         <div className="row">
@@ -16,11 +19,15 @@ const Filters = () => {
             />
           </div>
           <div className="col-md-4">
-            <select className="form-control">
-              <option value="all">All genders</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+            <select
+              className="form-control"
+              value={filterSelected}
+              onChange={onChange}
+            >
+              <option value="">All</option>
+              <option value="action">Action</option>
+              <option value="fiction">Fiction</option>
+              <option value="drama">Drama</option>
             </select>
           </div>
         </div>
