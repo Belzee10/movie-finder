@@ -12,13 +12,6 @@ const Filters = props => {
       <div className="col">
         <div className="row">
           <div className="col-md-4">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Find whatever you want"
-            />
-          </div>
-          <div className="col-md-4">
             <select
               className="form-control"
               value={filterSelected}
